@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <HashRouter>
-        
+
         <ApolloProvider client={client}>
           <Switch>
             <Route exact={true} path="/" component={LoginContainer} />

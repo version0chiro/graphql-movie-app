@@ -17,6 +17,9 @@ const useFormStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
     },
+    resize: {
+      fontSize: 50,
+    },
   })
 );
 
@@ -26,12 +29,13 @@ export const LoginComponent: React.FC<PropsForm> = (props) => {
     createEmptyLogin()
   );
   const classes = useFormStyles();
-  const onTexFieldChange = (fieldId: string) => (e: { target: { value: any; }; }) => {
-    setLoginInfo({
-      ...loginInfo,
-      [fieldId]: e.target.value,
-    });
-  };
+  const onTexFieldChange =
+    (fieldId: string) => (e: { target: { value: any } }) => {
+      setLoginInfo({
+        ...loginInfo,
+        [fieldId]: e.target.value,
+      });
+    };
 
   return (
     <div className={classes.formContainer}>
@@ -40,6 +44,7 @@ export const LoginComponent: React.FC<PropsForm> = (props) => {
         margin="normal"
         value={loginInfo.login}
         onChange={onTexFieldChange("login")}
+        InputLabelProps={{style: {fontSize: 20}}} 
       />
       <TextField
         label="Password"
@@ -49,7 +54,7 @@ export const LoginComponent: React.FC<PropsForm> = (props) => {
         onChange={onTexFieldChange("password")}
       />
       <Button
-      style={{padding:'10px',margin:'10px',marginTop:'40px'}}
+        style={{ padding: "10px", margin: "10px", marginTop: "40px" }}
         variant="contained"
         color="primary"
         onClick={() => onLogin(loginInfo)}

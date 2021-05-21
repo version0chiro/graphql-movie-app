@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 class NewMovies extends Component<any> {
   Movies() {
     return this.props.data.newMovies.map((movie: any) => {
-      return (
+      return (<div className="movies">
+
         <article key={movie.id} className="movie_list">
           <Link to={"/info/" + movie.id}>
             <img src={movie.poster_path} alt={movie.title} />
           </Link>
           <h1>{movie.title}</h1>
         </article>
+      </div>
       );
     });
   }
