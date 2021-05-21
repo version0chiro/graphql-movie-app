@@ -36,7 +36,7 @@ export const LoginContainer: React.FC<Props> = (props) => {
 
   const loginSucceeded = (isValid: boolean) => {
     if (isValid) {
-      history.push("/pageB");
+      history.push("/movies");
     } else {
       setShowAlert(true);
     }

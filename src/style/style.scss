@@ -1,0 +1,54 @@
+@import './sass/variables';
+
+@media screen { * , *:after,*:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box;  box-sizing: border-box;	} }* {margin: auto; padding: auto;}
+html { font-size: 62.5%; } /*base sizee*/
+
+body { font-size: 1.4rem; /* =14px all type sizes are relative to the base size*/
+    background: $background;
+	color:$black;
+	font-family: "Open Sans",sans-serif;
+	line-height: 2.7rem;
+	overflow-x: hidden;
+}
+@import './sass/header';
+@import './sass/cast';
+@import './sass/sidebar';
+
+@import './sass/homepage';
+
+article.wrapper{
+	max-width: 1300px;
+	margin: auto;
+	position: relative;
+}
+
+.description{
+	width: 30%;
+	margin: 5% 10% 5% 3%;
+}
+
+#home_btn {
+	border: 3px solid $black;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	border-radius: 50%;
+	z-index: 7;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	&:after{
+		content: '<';
+		color: $black;
+		z-index: 7;
+		position: absolute;
+		font-weight: bold;
+		font-size: 2rem;
+		text-indent: 0;
+		left: 15px;
+		top: 8px;
+	}
+}
+
