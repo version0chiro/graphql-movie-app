@@ -17,12 +17,12 @@ const useFormStyles = makeStyles((theme) =>
     card: {
       maxWidth: 400,
       maxHeight: 400,
-      width:"100%",
-      height:"100%",
+      width: "100%",
+      height: "100%",
       margin: "0 auto",
     },
     root: {
-      backgroundImage: `url(${background})`,
+      // backgroundImage: `url(${background})`,
     },
   })
 );
@@ -47,8 +47,15 @@ export const LoginContainer: React.FC<Props> = (props) => {
   };
 
   return (
-    <div style={{ backgroundImage: `url(${background})` }}>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+    <div style={{backgroundColor:"pink"}}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <Card className={classes.card}>
           <CardHeader title="Login" />
           <CardContent>
